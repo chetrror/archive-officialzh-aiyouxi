@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 简明指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f2f4f6;
+            color: #2c3e50;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* 导航 */
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e9ecef;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .logo a {
+            font-weight: 600;
+            font-size: 1.25rem;
+            color: #1e2b3c;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        .logo a:hover {
+            color: #3b6e9f;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: #4b5d6e;
+            text-decoration: none;
+            padding: 0.25rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1e2b3c;
+            border-bottom-color: #90a4b8;
+        }
+
+        /* hero */
+        .hero {
+            margin: 2.5rem 0 2rem;
+            padding: 2.5rem 2rem;
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e4e8ed;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #1b2a3a;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #435466;
+            max-width: 720px;
+        }
+
+        .hero .guide-note {
+            display: inline-block;
+            margin-top: 1.2rem;
+            padding: 0.4rem 1rem;
+            background: #f0f3f7;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #3d5a73;
+            border: 1px solid #dbe1e8;
+        }
+
+        /* 卡片通用 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.5rem 1.4rem;
+            border: 1px solid #e2e7ed;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #1e2d3d;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #3f5366;
+            margin-bottom: 0.75rem;
+        }
+
+        .card .meta {
+            font-size: 0.85rem;
+            color: #7a8b9e;
+            border-top: 1px solid #edf1f5;
+            padding-top: 0.65rem;
+            margin-top: 0.5rem;
+        }
+
+        /* 场景模块 (三个卡片) */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 2.5rem 0 0.75rem;
+            color: #1e2d3d;
+        }
+
+        .section-sub {
+            color: #536a7c;
+            margin-bottom: 1.2rem;
+            font-size: 0.98rem;
+        }
+
+        /* 常见说明 (FAQ风格) */
+        .faq-block {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.5rem 1.8rem;
+            border: 1px solid #e2e7ed;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.02);
+            margin: 2.5rem 0 1.5rem;
+        }
+
+        .faq-block h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1b2a3a;
+        }
+
+        .faq-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #edf1f5;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            color: #1f3142;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-answer {
+            color: #4f6579;
+            font-size: 0.92rem;
+        }
+
+        .faq-answer a {
+            color: #3b6e9f;
+            text-decoration: none;
+            font-weight: 450;
+        }
+
+        .faq-answer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 底部 */
+        footer {
+            margin-top: 3rem;
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7b8c9d;
+            border-top: 1px solid #dce2e9;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+            nav {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0.75rem 1rem;
+            }
+            .nav-links {
+                justify-content: center;
+                gap: 1.25rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero {
+                padding: 1.5rem 1.2rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-block {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- 顶部导航 -->
+    <nav>
+        <div class="logo">
+            <a href="https://to-hthsports.com">华体会</a>
+        </div>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">场景</a>
+            <a href="#">说明</a>
+            <a href="#">帮助</a>
+        </div>
+    </nav>
+
+    <!-- Hero 区域：简明指南 + 访问提醒 -->
+    <div class="hero">
+        <h1>简明指南 · 从了解开始</h1>
+        <p>无论你是初次接触还是希望更顺畅地浏览，这份轻量说明为你梳理了核心思路。用平和的方式认识 <a href="https://to-hthsports.com" style="color: #3b6e9f; text-decoration: none; font-weight: 500;">华体会</a>，并留意几个实用细节，体验会更从容。</p>
+        <div class="guide-note">🧭 访问提醒：使用前请确认所在地区网络环境合规</div>
+    </div>
+
+    <!-- 三场景模块 -->
+    <h2 class="section-title">三个常见场景</h2>
+    <p class="section-sub">根据不同的使用习惯，我们整理了三种典型路径，供你参考。</p>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>🌿 信息浏览</h3>
+            <p>如果你想大致了解平台内容、活动类型或更新动态，直接通过首页导航浏览即可。页面结构清晰，分类明确，适合安静翻阅。</p>
+            <div class="meta">无需注册 · 自由查看</div>
+        </div>
+        <div class="card">
+            <h3>📋 功能探索</h3>
+            <p>当你希望使用具体功能时，建议先查看对应版块的引导说明。部分交互需要简单了解规则，提前阅读可以避免操作中断。</p>
+            <div class="meta">按需学习 · 轻松上手</div>
+        </div>
+        <div class="card">
+            <h3>🔐 访问与网络</h3>
+            <p>由于服务基于互联网提供，不同地区的连接情况可能略有差异。如果遇到页面加载缓慢或无法连接，可以先检查本地网络设置。</p>
+            <div class="meta">网络通畅 · 体验更佳</div>
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ摘要) -->
+    <div class="faq-block">
+        <h2>常见说明</h2>
+        <div class="faq-item">
+            <div class="faq-question">访问 <a href="https://to-hthsports.com" style="color: #2c3e50; text-decoration: none;">华体会</a> 需要什么条件？</div>
+            <div class="faq-answer">只需要可以正常联网的设备和浏览器。建议使用最新版 Chrome、Edge 或 Safari，以获得稳定显示。部分功能可能需要允许 JavaScript。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">页面语言和内容方向是什么？</div>
+            <div class="faq-answer">主要使用中文，内容围绕体育、休闲及文化类信息展开。所有展示均遵守相关法律法规，不包含违规或夸大表述。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">如何联系或反馈？</div>
+            <div class="faq-answer">平台内通常设有联系渠道或表单。你也可以通过通用的客服邮箱或站内通知获取支持。我们建议先查阅帮助区域，常见问题大多有解答。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">是否提供移动端适配？</div>
+            <div class="faq-answer">已针对手机和窄屏设备进行布局优化，卡片、导航和文本会自动调整。你可以在手机浏览器上直接打开 <a href="https://to-hthsports.com">华体会</a>，体验与桌面端基本一致。</div>
+        </div>
+    </div>
+
+    <!-- 额外提示卡片：访问提醒自然融入 -->
+    <div style="background: #f8fafc; border-radius: 18px; padding: 1.2rem 1.5rem; border: 1px solid #e4e9ef; margin-bottom: 1rem;">
+        <p style="color: #3d5a6b; font-size: 0.95rem;">🔔 访问提醒：使用任何线上服务前，请确保你已了解当地关于互联网使用的相关规定。保持信息获取的合法与透明，是良好体验的基础。</p>
+    </div>
+
+    <footer>
+        <p>一份轻量介绍 · 内容仅供参考 · 具体以实际页面为准</p>
+    </footer>
+
+</div>
+</body>
+</html>
